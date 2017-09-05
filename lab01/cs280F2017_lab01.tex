@@ -19,6 +19,7 @@
 
 \newcommand{\mainprogram}{\lstinline{duplicates.py}}
 \newcommand{\mainprogramsource}{\lstinline{duplicates/duplicates.py}}
+\newcommand{\maintestsource}{\lstinline{duplicates/tests/test_duplicates.py}}
 
 % Edit this commands to describe key deliverables
 
@@ -258,7 +259,7 @@ After this command finishes, you can use \command{cd} to change into the new dir
 one directory from your current location, then you can type the command \command{cd ..}. Please continue to use the
 \command{cd} and \command{ls} commands to explore the files that you automatically downloaded from GitHub. What files
 and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
-a neighbor and a \mbox{teaching assistant}.
+a neighbor and the course instructor.
 
 What step did you find to be the most challenging? Why? You should write your reflections in a file, called
 \reflection{}, that uses the Markdown writing language. You can learn more about Markdown by viewing the aforementioned
@@ -271,15 +272,15 @@ Now, please review the \reflection{} in the repository. By reading this file you
 provided test suite for this program and see that it fails. Please make sure that you carefully record your experiences
 when completing each of these steps and that you understand the purpose, input, and output of each command. Now, you
 will need to learn more about the Python programming language so that you can identify and fix the defect in
-\mainprogram{}. Once you resolve this defect, you need to carefully document your fix.
+\mainprogram{}. Once you resolve this defect, you need to carefully document your fix and make sure that the program
+produces the correct output and that all of the test cases pass. Finally, you should add at least four new test cases
+that establish a confidence in the correctness of your implementation.
 
 \section*{Evaluating Your Submission}
 
-The source code for the \mainprogram{}
-
-
-The Markdown file
-that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
+The source code for the \mainprogram{} should now contain the correct implementation. Next, all of the source code in
+your test suite and your \mainprogram{} should have thoughtful and clear comments. Also, the Markdown file that contains
+your reflection must adhere to the standards described in the Markdown Syntax Guide
 \url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
 Markdown standards established by the \step{Markdown linting} tool available at
 \url{https://github.com/markdownlint/markdownlint/}
@@ -305,13 +306,17 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 
 \setlength{\itemsep}{0in}
 
-\item Stored in \reflection{}, a one-paragraph reflection on the commands that you typed in \command{gvim} and the
-  terminal window. This Markdown-based document should explain the input, output, and behavior of each command and the
-  challenges that you confronted when using it. For every challenge that you encountered, please explain your solution
-  for it.
+\item Stored in \reflection{}, a two-paragraph reflection on the commands that you typed in your text editor and the
+  terminal. This Markdown-based document's first paragraph should explain the input, output, and behavior of each
+  command and the challenges that you confronted when using it. For every challenge that you encountered, please explain
+  your solution for it. Finally, the second paragraph in this file should explain what defect you found in the program,
+  illustrating why it was not correct and showing the steps that you took to fix it.
 
 \item A properly documented, well-formatted, and correct version of \mainprogramsource{} that both meets all of the
   established requirements and produces the desired output.
+
+\item A properly documented, well-formatted, and correct version of \maintestsource{} that both meets all of the
+  established requirements and passes correctly.
 
 \end{enumerate}
 
