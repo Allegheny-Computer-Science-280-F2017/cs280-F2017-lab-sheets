@@ -1,0 +1,30 @@
+# install latex
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
+
+# create the _build directory
+# compile the LaTeX file and save the PDF in _build
+script:
+- mkdir _build
+- latexmk -pdf -outdir=_build lab01/cs280F2017_lab01.tex
+
+# securely deploy the PDF to the specified tag on GitHub
+# GitHub's web site provides "releases" as a link near "commits"
+deploy:
+  provider: releases
+  api_key:
+    secure: LpP0t4eZdpioEYeNbS7hfaAHOPPYDfcnOXZOAAXoorifE+yDLjw1qFltcmaLyO9SMjOzhM+nNsXPzgEqnXnHBoz89yAF2US8jARiDNRZ2k/PSz08iTICutlkEQn2/X8StxRwDZedVKe9Ar9IcB/mSqpStfWFjqY7luYLE9Ijqk/lkdRV3Q2aya7efxtVl8g10fMJdzLP5u2/3CUpDOIQsgbCRdaBqUsxNgmWkGo2JOMzQsUyASpp2Ps5rgdot684W9JcIqRxTq3dzcoOWgRldclPlzfE2pxPY6XBYfnG2c4i1xgoRa2iqFfXjXdC4BV257i63weGRWBrdB2596t2usaTRAw1ELOjD4qmcfZ2uYhtol5zkADYxuTy+ZpYxVtOzr6xCb5i3G8q6dnJYPjol0Kg401yZk4f4XCarM6xYhTAS5MTsQY0wHcSqCULbf05ajfABg5+1lU6ziQNrFO5LKwK3GbknzZ/WdAoMVv37Nkzk9x6SalnP3N2tWJfY4sdx1kY3CforA3B9Rt0D4x7IYHd/DABDEGrXv6JCdh/aTL1+o5fMr97WN6znLLtKl1paPyEiXjTFHkWpoY9HhThThTnqBZeM14p9nBUUu8V3ExXzV5AF6JqcJd72Tq7A4/dItiwRRM3H1/brlXa0vEUt0wZ43O1XPHGfLbnw2U5YdQ=
+
+
+  file: _build/cs280F2017_lab01.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+
+# I could not get this to work correctly even though
+# the travis command-line tool automatically generated it
+
+  # on:
+    # repo: Allegheny-Computer-Science-111-F2017/cs111-F2017-labs
