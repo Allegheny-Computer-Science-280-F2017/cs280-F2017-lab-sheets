@@ -4,12 +4,12 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{September 7}
-\newcommand{\assignmentassignedate}{August 31}
+\newcommand{\assignmentduedate}{September 12}
+\newcommand{\assignmentassignedate}{September 5}
 \newcommand{\assignmentnumber}{One}
 
 \newcommand{\labyear}{2017}
-\newcommand{\labday}{Thursday}
+\newcommand{\labday}{Tuesday}
 \newcommand{\labtime}{2:30 pm}
 
 \newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
@@ -17,22 +17,12 @@
 
 % Edit these commands to give the name to the main program
 
-\newcommand{\mainprogram}{\lstinline{DisplayOutput}}
-\newcommand{\mainprogramsource}{\lstinline{src/main/java/labone/DisplayOutput.java}}
+\newcommand{\mainprogram}{\lstinline{duplicates.py}}
+\newcommand{\mainprogramsource}{\lstinline{duplicates/duplicates.py}}
 
 % Edit this commands to describe key deliverables
 
-\newcommand{\reflection}{\lstinline{writing/reflection.md}}
-
-% Commands to describe key development tasks
-
-% --> Running gatorgrader.sh
-\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
-\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
-
-% --> Compiling and running program with gradle
-\newcommand{\gradlebuild}{\command{gradle build}}
-\newcommand{\gradlerun}{\command{gradle run}}
+\newcommand{\reflection}{\lstinline{README.md}}
 
 % Commands to describe key git tasks
 
@@ -276,46 +266,12 @@ one directory from your current location, then you can type the command \command
 and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
 a neighbor and a \mbox{teaching assistant}.
 
-\section*{Displaying Output with a Java Program}
-
-In order view the source code of a Java program or a Markdown-based writing assignment, you need a text editor. There
-are many different text editors on your workstation and you should feel free to explore these on your own. Since it is a
-powerful text editor known for helping computer scientists ``edit text at the speed of thought'', in this class we will
-normally use the text editor called \command{gvim}. Today, you will view and improve your first Java program in {\tt
-  gvim}! To load the source code of today's Java program into \program{gvim}, you should type \command{gvim
-src/main/java/labone/DisplayOutput.java} in your terminal window. This should cause a new window, the \program{gvim}
-text editor, to appear on your screen. Since \program{gvim} is a modal editor, you may notice that if you start typing,
-nothing appears (unless you happen to hit certain letters such as \command{i}, \command{o}, \command{a}, and a few
-others). This is because you are not in ``insert mode.'' To get into insert mode, just type the letter \command{i}
-(lower case). Once you do this, the window should show the word \command{--INSERT--} in the lower left corner.
-
-This laboratory assignment invites you to implement a Java program that displays exactly four lines of output. The first
-output line should display your name and then today's date. The next three lines should each display some words of
-advice that you want to share with the person running your program. You can accomplish the first task by typing
-\command{System.out.println("Gregory M. Kapfhammer " + new Date());}, substituting your name for the name of the course
-instructor. Your program will produce three additional lines of output once you add three more
-\command{System.out.println} statements. When you are finished typing text in \program{gvim}, press the ESC key located
-in the upper left corner of the keyboard. This should remove the word \command{--INSERT--} from the bottom of the screen
-and take you out of insert mode. Use the \option{File/Save} menu to save your program. Alternatively, if you would like
-to use the keyboard to save your file, you can press \command{:w} when you are not in insert mode. Leaving the {\tt
-gvim} window open, go back to your terminal window. Now, you are ready to learn to use new tools that build and run your
-program and check its correctness!
-
-If you want to \step{build} your program you can type the command \gradlebuild{} in your terminal, thereby causing the
-Java compiler to check your program for errors and get it ready to run. If you get any error messages, go back into
-\program{gvim} and try to figure out what you mis-typed and fix it. Once you have solved the problem, make a note of the
-error and the solution for resolving it. Re-save your program and then build it again by re-running the \gradlebuild{}.
-If you cannot build \mainprogram{} correctly, then please talk with a teaching assistant or the instructor.
-
-When all of the errors are eliminated, you can run your program by typing \gradlerun{} in the terminal window---this is
-the ``execute'' step that will run your program and produce the designated output. You should see your name, today's
-date and three more lines of text. Make sure there are spaces separating words in your output (did you forget to put a
-space inside the quotation marks after your last name?). If not, then repair the program and re-build and re-run it.
-Once the program runs, please reflect on this process. What step did you find to be the most challenging? Why? You
-should write your reflections in a file, called \reflection{}, that uses the Markdown writing language. You can learn
-more about Markdown by viewing the aforementioned GitHub guide. To complete this aspect of the assignment, you should
-write one high-quality paragraph that reports on your experiences. Now, verbally share your experiences with another
-class member!
+What step did you find to be the most challenging? Why? You should write your
+reflections in a file, called \reflection{}, that uses the Markdown writing
+language. You can learn more about Markdown by viewing the aforementioned
+GitHub guide. To complete this aspect of the assignment, you should write one
+high-quality paragraph that reports on your experiences. Now, verbally share
+your experiences with another class member!
 
 Since this is our first laboratory assignment and you are still learning how to use the appropriate hardware and
 software, don't become frustrated if you make a mistake. Instead, use your mistakes as an opportunity for learning both
@@ -335,18 +291,6 @@ industry-accepted standards, the GatorGrader tool that you will use in this labo
 to automatically check if your submission meets the standards for correctness. For instance, GatorGrader will check to
 ensure that \mainprogram{} produces exactly four lines of output and that you use the \command{new Date()} construct in
 the Java source code to cause the program to display today's date.
-
-To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
-completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
-will see the following output in your terminal: \command{Overall, are there any mistakes in the assignment? Yes}. If you
-do have mistakes in your assignment, then you will need to review GatorGrader's output, find the mistake, and try to fix
-it. Once your program is building correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you want to signal that
-the \mainprogramsource{} file is ready for transfer to GitHub you would first type
-\gitaddfile{src/main/java/labone/DisplayOutput.java} in your terminal. Then you can type \command{git commit -a -m "Type
-your own message"}, followed by typing \gitpush{} and see that the transfer to GitHub is successful. If you notice that
-transferring your code or writing to GitHub did not work correctly, then please try to determine why, asking a teaching
-assistant or the course instructor for assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
 \gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
