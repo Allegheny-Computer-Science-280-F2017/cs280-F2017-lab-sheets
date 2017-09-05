@@ -235,7 +235,7 @@ assignment's starting materials and to store the completed version of your assig
 GitHub repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced
 with the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these
 steps, you should have created a GitHub repository with a name like
-``Allegheny-Computer-Science-111-Fall-2017/computer-science-111-fall-2017-lab-1-gkapfham''. Unless you provide the
+``Allegheny-Computer-Science-280-Fall-2017/computer-science-280-fall-2017-lab-1-gkapfham''. Unless you provide the
 instructor with documentation of the extenuating circumstances that you are facing, not accepting the assignment means
 that you automatically receive a failing grade for it.
 
@@ -244,14 +244,14 @@ for your new GitHub repository, paying close attention to the technical details 
 and the output that your program must produce. Now you are ready to download the starting materials to your laboratory
 computer. Click the ``Clone or download'' button and, after ensuring that you have selected ``Clone with SSH'', please
 copy this command to your clipboard. At this point, you can open a new terminal window and type the command
-\command{mkdir cs111F2017}. To enter into this directory you should now type \command{cd cs111F2017}. Next, you can type
+\command{mkdir cs280F2017}. To enter into this directory you should now type \command{cd cs280F2017}. Next, you can type
 the command \command{ls} and see that there are no files or directories inside of this directory. By typing \command{git
 clone} in your terminal and then pasting in the string that you copied from the GitHub site you will download all of the
 code for this assignment. For instance, if the course instructor ran the \command{git clone} command in the terminal, it
 would look like:
 
 \begin{lstlisting}
-  git clone https://github.com/Allegheny-Computer-Science-111-F2017/computer-science-111-fall-2017-lab-1-gkapfham.git
+  git clone https://github.com/Allegheny-Computer-Science-280-F2017/computer-science-280-fall-2017-lab-1-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new directory. If you want to \step{go back}
@@ -260,31 +260,29 @@ one directory from your current location, then you can type the command \command
 and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
 a neighbor and a \mbox{teaching assistant}.
 
-What step did you find to be the most challenging? Why? You should write your
-reflections in a file, called \reflection{}, that uses the Markdown writing
-language. You can learn more about Markdown by viewing the aforementioned
-GitHub guide. To complete this aspect of the assignment, you should write one
-high-quality paragraph that reports on your experiences. Now, verbally share
-your experiences with another class member!
+What step did you find to be the most challenging? Why? You should write your reflections in a file, called
+\reflection{}, that uses the Markdown writing language. You can learn more about Markdown by viewing the aforementioned
+GitHub guide. To complete this aspect of the assignment, you should write one high-quality paragraph that reports on
+your experiences. Now, verbally share your experiences with another class member! As you continue the assignment, you
+should add all of the other required notes (e.g., a description of the program's defect) to the \reflection{}.
 
-Since this is our first laboratory assignment and you are still learning how to use the appropriate hardware and
-software, don't become frustrated if you make a mistake. Instead, use your mistakes as an opportunity for learning both
-about the necessary technology and the background and expertise of the other students in the class, the teaching
-assistants, and the course instructor.
+Now, please review the \reflection{} in the repository. By reading this file you will learn how to run the
+\mainprogram{} program and observe that its output is not correct. The \reflection{} will also teach you how to run the
+provided test suite for this program and see that it fails. Please make sure that you carefully record your experiences
+when completing each of these steps and that you understand the purpose, input, and output of each command. Now, you
+will need to learn more about the Python programming language so that you can identify and fix the defect in
+\mainprogram{}. Once you resolve this defect, you need to carefully document your fix.
 
-\section*{Checking the Correctness of Your Program and Writing}
+\section*{Evaluating Your Submission}
 
-As verified by Checkstyle tool, the source code for the \mainprogram{} file must adhere to all of the requirements in
-the Google Java Style Guide available at \url{https://google.github.io/styleguide/javaguide.html}. The Markdown file
+The source code for the \mainprogram{}
+
+
+The Markdown file
 that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
 \url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
 Markdown standards established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/} and the writing standards set by the \step{prose linting} tool from
-\url{http://proselint.com/}. Instead of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, the GatorGrader tool that you will use in this laboratory assignment makes it easy for you
-to automatically check if your submission meets the standards for correctness. For instance, GatorGrader will check to
-ensure that \mainprogram{} produces exactly four lines of output and that you use the \command{new Date()} construct in
-the Java source code to cause the program to display today's date.
+\url{https://github.com/markdownlint/markdownlint/}
 
 After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
 \gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
