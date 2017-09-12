@@ -4,7 +4,7 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{September 19}
+\newcommand{\assignmentduedate}{September 26}
 \newcommand{\assignmentassignedate}{September 12}
 \newcommand{\assignmentnumber}{Two}
 
@@ -154,8 +154,8 @@ If you have not done so already, please read all of the relevant ``GitHub Guides
 please make sure that you have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects on GitHub'';
 each of them will help you to understand how to use both GitHub and GitHub Classroom. To do well on this assignment, you
 should review Chapter 1 of the SETP textbook. You should also read Chapter 2 of SETP, paying particularly close
-attention to the various software process models and the descriptions of the verification and validation tasks. Please
-see the course instructor if you have questions these reading assignments.
+attention to the stages in the software process models and the descriptions of any verification and validation tasks.
+Please see the course instructor if you have questions these reading assignments.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
@@ -197,8 +197,8 @@ lists as output. You are given the following specification for it.
 
 \begin{quote}
 
-For an input list of objects, denoted $L$, the data generator must produce, in addition to the input list, all of the
-lists that can be obtained by swapping two adjacent items in $L$.
+For an input list of entities, $L$, the data generator must produce, in addition to the input list, all of the lists
+that can be obtained by swapping two adjacent items in $L$.
 
 \end{quote}
 
@@ -217,32 +217,37 @@ For list $L = \{1, 2, 3, 4\}$, the customer wants the data generator to output $
 \end{itemize}
 
 The customer knows that the component that you must create will be a part of a larger system that has not yet been
-fully implemented.  You are responsible for implementing this data generator so that it functions according to the
-provided specification.  However, please note that the stated requirements may not be entirely correct!  It is the job
-of your team to interact with the customer to ensure that the system is implemented as desired.  Using Markdown, you
+fully implemented. You are responsible for implementing this data generator so that it functions according to the
+provided specification. However, please note that the stated requirements may not be entirely correct! It is the job
+of your team to interact with the customer to ensure that the system is implemented as desired. Using Markdown, you
 should write a requirements document that fully explains the inputs, outputs, and behavior of the data generator.
 
 \section*{Designing the System}
 
-Working with the members of your team and leveraging the content in the requirements document, you should create a
-design for your system.  As you are finalizing the object-oriented design, you should try to develop answers to relevant
-questions such as: How many classes will you use? What will be the relationship between the classes? What methods will
-the classes have? What will be the inputs and outputs of the methods?  Is the design easy to understand?  After
-answering these questions, you should use Markdown to write a design document with text and diagrams that explain the
-system. Since the main focus of this assignment is not design diagrams, students may use any reasonable tool to create
-their diagrams and, if necessary, include them as separate files in their team's repository. When clarification of the
-system's specification is necessary (e.g., due to writing ambiguities), the designers should interact with the
-individual(s) who elicited \mbox{the requirements}.
+Leveraging the content in the requirements document, you should create a design for your system, also drawing
+inspiration from the existing code as a starting point. As you are finalizing the design, you should try to develop
+answers to relevant questions such as: How many functions will you use? What will be the relationship between the
+functions? What parameters will the functions have? What will be the inputs and outputs of the functions? Is the design
+easy to understand? After answering these questions and studying the provided Python code, you should use Markdown to
+write a design document with text that explains the organization of the system.
 
+\section*{Implementing the System}
 
+Now, you should take the requirements and design documents and start to think about how the system will be implemented.
+Your task is to ensure that the program faithfully adheres to the descriptions that you already produced. When an aspect
+of the requirements and design documents is not clear, you will need to revisit it and try to resolve any outstanding
+concerns. Whenever you make changes to a requirements or design document, you should quickly commit any changes to your
+repository so as to best ensure that the requirements and design of the system are in sync with its implementation.
+After implementing a portion of your system, please make sure that you demonstrate it to the customer so as to ensure
+that it fulfills all of the project requirements.
 
 \section*{Evaluating Your Submission}
 
 The source code for the \mainprogram{} should now contain the correct implementation. Next, all of the source code in
 your test suite and your \mainprogram{} should have thoughtful and clear comments. Also, the Markdown file that contains
 your reflection must adhere to the standards described in the Markdown Syntax Guide
-\url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should also adhere to the
-Markdown standards established by the \step{Markdown linting} tool available at
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, all of your Markdown files should also adhere to
+the Markdown standards established by the \step{Markdown linting} tool available at
 \url{https://github.com/markdownlint/markdownlint/}
 
 After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
@@ -266,11 +271,14 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 
 \setlength{\itemsep}{0in}
 
-\item Stored in \reflection{}, a two-paragraph reflection on the commands that you typed in your text editor and the
-  terminal. This Markdown-based document's first paragraph should explain the input, output, and behavior of each
-  command and the challenges that you confronted when using it. For every challenge that you encountered, please explain
-  your solution for it. Finally, the second paragraph in this file should explain what defect you found in the program,
-  illustrating why it was not correct and showing the steps that you took to fix it.
+\item Stored in \reflection{}, a three-paragraph reflection on the challenges that you faced, the defects in the program
+  and/or its specification, and when you performed verification and validation. This Markdown-based document's first
+  paragraph should explain the input, output, and behavior of each command and the challenges that you confronted when
+  using it.
+
+\item Stored in two additional and separate Markdown documents with appropriate names, requirements and design documents
+  that clearly explain what the \mainprogramsource{} program should do and how its main components will be organized
+  into a cohesive system.
 
 \item A properly documented, well-formatted, and correct version of \mainprogramsource{} that both meets all of the
   established requirements and produces the desired output.
@@ -292,13 +300,13 @@ instructor will reduce your grade for the assignment while still considering the
 your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
 questions about the evaluation of this laboratory assignment.
 
-\section*{Adhering to the Honor Code}
+% \section*{Adhering to the Honor Code}
 
-In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
-for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem with others and the student who produces
-assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., Python source code
-or Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of
-violating the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+% In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
+% for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a problem with others and the student who produces
+% assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., Python source code
+% or Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of
+% violating the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
 
 \end{document}
