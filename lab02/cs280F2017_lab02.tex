@@ -17,9 +17,9 @@
 
 % Edit these commands to give the name to the main program
 
-\newcommand{\mainprogram}{\lstinline{duplicates.py}}
-\newcommand{\mainprogramsource}{\lstinline{duplicates/duplicates.py}}
-\newcommand{\maintestsource}{\lstinline{duplicates/tests/test_duplicates.py}}
+\newcommand{\mainprogram}{\lstinline{generator.py}}
+\newcommand{\mainprogramsource}{\lstinline{generator/generator.py}}
+\newcommand{\maintestsource}{\lstinline{generator/tests/test_generator.py}}
 
 % Edit this commands to describe key deliverables
 
@@ -153,7 +153,8 @@ If you have not done so already, please read all of the relevant ``GitHub Guides
 \url{https://guides.github.com/}, that explain how to use many of the features that GitHub provides. In particular,
 please make sure that you have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects on GitHub'';
 each of them will help you to understand how to use both GitHub and GitHub Classroom. To do well on this assignment, you
-should also read Chapter 1 of the SETP textbook, paying particularly close attention to Sections 1.3 through 1.5. Please
+should review Chapter 1 of the SETP textbook. You should also read Chapter 2 of SETP, paying particularly close
+attention to the various software process models and the descriptions of the verification and validation tasks. Please
 see the course instructor if you have questions these reading assignments.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
@@ -165,45 +166,75 @@ assignment's starting materials and to store the completed version of your assig
 GitHub repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced
 with the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these
 steps, you should have created a GitHub repository with a name like
-``Allegheny-Computer-Science-280-Fall-2017/computer-science-280-fall-2017-lab-1-gkapfham''. Unless you provide the
+``Allegheny-Computer-Science-280-Fall-2017/computer-science-280-fall-2017-lab-2-gkapfham''. Unless you provide the
 instructor with documentation of the extenuating circumstances that you are facing, not accepting the assignment means
 that you automatically receive a failing grade for it.
 
-Before you move to the next step of this assignment, please make sure that you read all of the content on the web site
-for your new GitHub repository, paying close attention to the technical details about the commands that you will type
-and the output that your program must produce. Now you are ready to download the starting materials to your laboratory
-computer. Click the ``Clone or download'' button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. At this point, you can open a new terminal window and type the command
-\command{mkdir cs280F2017}. To enter into this directory you should now type \command{cd cs280F2017}. Next, you can type
-the command \command{ls} and see that there are no files or directories inside of this directory. By typing \command{git
-clone} in your terminal and then pasting in the string that you copied from the GitHub site you will download all of the
-code for this assignment. For instance, if the course instructor ran the \command{git clone} command in the terminal, it
-would look like:
+Now you are ready to download the starting materials to your laboratory computer. Click the ``Clone or download'' button
+and, after ensuring that you have selected ``Clone with SSH'', please copy this command to your clipboard. To enter into
+your course directory you should now type \command{cd cs280F2017}. By typing \command{git clone} in your terminal and then
+pasting in the string that you copied from the GitHub site you will download all of the code for this assignment. For
+instance, if the course instructor ran the \command{git clone} command in the terminal, it would look like:
 
 \begin{lstlisting}
-  git clone git@github.com:/Allegheny-Computer-Science-280-F2017/computer-science-280-fall-2017-lab-1-gkapfham.git
+  git clone git@github.com:/Allegheny-Computer-Science-280-F2017/computer-science-280-fall-2017-lab-2-gkapfham.git
 \end{lstlisting}
 
-After this command finishes, you can use \command{cd} to change into the new directory. If you want to \step{go back}
-one directory from your current location, then you can type the command \command{cd ..}. Please continue to use the
-\command{cd} and \command{ls} commands to explore the files that you automatically downloaded from GitHub. What files
-and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
-a neighbor and the instructor.
+Now, please study the \reflection{} in the repository. By reading this file you will learn how to run the \mainprogram{}
+program and observe that its output is not correct. The \reflection{} will also teach you how to run the provided test
+suite for this program and see that it fails. Please make sure that you carefully record your experiences when
+completing each of these and other steps and that you understand the purpose, input, and output of each command. Now,
+you will need to learn more about the Python programming language so that you can understand the requirements for this
+program and ensure that it ultimately works correctly. If you need to modify the program's specification or
+implementation, please carefully document your fix, making sure that the program produces the correct output and that
+all of the test cases pass. Finally, you should add at least four new test cases that establish a confidence in the
+correctness of your implementation.
 
-What step did you find to be the most challenging? Why? You should write your reflections in a file, called
-\reflection{}, that uses the Markdown writing language. You can learn more about Markdown by viewing the aforementioned
-GitHub guide. To complete this aspect of the assignment, you should write one high-quality paragraph that reports on
-your experiences. Now, verbally share your experiences with another class member! As you continue the assignment, you
-should add all of the other required notes (e.g., a description of the program's defect) to the \reflection{}.
+\section*{Eliciting Requirements from the Customer}
 
-Now, please study the \reflection{} in the repository. By reading this file you will learn how to run the
-\mainprogram{} program and observe that its output is not correct. The \reflection{} will also teach you how to run the
-provided test suite for this program and see that it fails. Please make sure that you carefully record your experiences
-when completing each of these steps and that you understand the purpose, input, and output of each command. Now, you
-will need to learn more about the Python programming language so that you can identify and fix the defect in
-\mainprogram{}. Once you resolve this defect, you need to carefully document your fix and make sure that the program
-produces the correct output and that all of the test cases pass. Finally, you should add at least four new test cases
-that establish a confidence in the correctness of your implementation.
+You are responsible for implementing a data generator that should take a list of numbers as input and produce a list of
+lists as output. You are given the following specification for it.
+
+\begin{quote}
+
+For an input list of objects, denoted $L$, the data generator must produce, in addition to the input list, all of the
+lists that can be obtained by swapping two adjacent items in $L$.
+
+\end{quote}
+
+\noindent
+For list $L = \{1, 2, 3, 4\}$, the customer wants the data generator to output $L=\{L_0, \ldots, L_6\}$ with
+
+\begin{itemize}
+  \itemsep 0in
+  \item[] $L_0 = \{1, 2, 3, 4\}$
+  \item[] $L_1 = \{2, 1, 3, 4\}$
+  \item[] $L_2 = \{3, 2, 1, 4\}$
+  \item[] $L_3 = \{4, 2, 3, 1\}$
+  \item[] $L_3 = \{1, 3, 2, 4\}$
+  \item[] $L_4 = \{1, 4, 3, 2\}$
+  \item[] $L_6 = \{1, 2, 4, 3\}$
+\end{itemize}
+
+The customer knows that the component that you must create will be a part of a larger system that has not yet been
+fully implemented.  You are responsible for implementing this data generator so that it functions according to the
+provided specification.  However, please note that the stated requirements may not be entirely correct!  It is the job
+of your team to interact with the customer to ensure that the system is implemented as desired.  Using Markdown, you
+should write a requirements document that fully explains the inputs, outputs, and behavior of the data generator.
+
+\section*{Designing the System}
+
+Working with the members of your team and leveraging the content in the requirements document, you should create a
+design for your system.  As you are finalizing the object-oriented design, you should try to develop answers to relevant
+questions such as: How many classes will you use? What will be the relationship between the classes? What methods will
+the classes have? What will be the inputs and outputs of the methods?  Is the design easy to understand?  After
+answering these questions, you should use Markdown to write a design document with text and diagrams that explain the
+system. Since the main focus of this assignment is not design diagrams, students may use any reasonable tool to create
+their diagrams and, if necessary, include them as separate files in their team's repository. When clarification of the
+system's specification is necessary (e.g., due to writing ambiguities), the designers should interact with the
+individual(s) who elicited \mbox{the requirements}.
+
+
 
 \section*{Evaluating Your Submission}
 
