@@ -5,11 +5,14 @@ before_install:
 script:
 - mkdir _build
 - latexmk -pdf -outdir=_build lab01/cs280F2017_lab01.tex
+- latexmk -pdf -outdir=_build lab02/cs280F2017_lab02.tex
 deploy:
   provider: releases
   api_key:
     secure: PaYaLUoxeK0zZuybMp8QPECtSFn8kE0VvsLN1N0PAFq6/XLqJ8sb9LwYHB6O56mfKCG4iCy+Nk0NW8YJlAsyL7wObxAMR9jry8we5g0VJPMnB6/6Kj8v2/PrZqAF3JA1C4oUhvaeaU6BKVKdIXD90MfDIPpGCny8gXiIfypq6AHp5o4uRfFu9OP4xU6lj+ICVaMO6I1cI65N+FVmyWZvHiL6yP9JOxGI+RpwKFpA1KJZg3gKgK1l96YLayNhGg9LkrsKYTf+gzDUm1L3hc8cs/e/z2DfofjOi9U76q9MyFeurETmyrlBr9563rlfbrwQ93ELqrJouxvh9z/gd6GEWdEJC6BTFCbtktEcHqX55fZL6QLRjYGIfG9BQ8JLOJwUdjcpU54Y2dtX4qQZ1cRV28mIR5Ujx+VipfDi3VMLZCY8u2Fl1rGzjEhye7Ol4cGy5n6SLu5SiPkKT8x9qAhQMdN2PK6/3nTbqam0+bBhB9hQH+xv7+gf8tKDOz7aD5WbAP9XpynUhtYoTMDtL6xbApqGEJT/MOyPBF5f6a1A046J0t/PtjI8VXczRE3yH+kpwh2rhEX08zRZfU1WKDEZEFhGguspAqrneYyPZ39yCH4/sdcjl1fjtWWQeNWavRyglvouC2mi1jPTlzZ4kruZElCt0rBNH+I9nbOJjECyu/E=
-  file: _build/cs280F2017_lab01.pdf
+  file:
+    - _build/cs280F2017_lab01.pdf
+    - _build/cs280F2017_lab02.pdf
   skip_cleanup: true
   on:
     tags: true
