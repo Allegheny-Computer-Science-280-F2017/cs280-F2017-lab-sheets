@@ -189,25 +189,18 @@ requests.
 
 To access the laboratory assignment, you should go into the \channel{\#announcements} channel in our Slack team and find
 the announcement that provides a link for it. Now, make sure that the leader of your team also notes your team number
-and first copies this link and pastes it into their web browser. Now, the team leader create their team with the name
-\command{Computer-Science-280-Fall-2017-Lab-3-Team-<assigned team number>} and then accept the laboratory assignment and
-see that GitHub Classroom created a new GitHub repository for your team to access the assignment's starting materials
-and to store the completed version of your assignment. At this point, each additional member of the team can join it
-through GitHub. Please make sure that each of your team members joins the team to which the instructor assigned them to
-work. Remember, unless you provide the instructor with documentation of the extenuating circumstances that you are
-facing, not accepting the assignment means that you automatically receive a failing grade for it.
+and first copies this link and pastes it into their web browser. Next, the team leader will create their team with the
+name \command{Computer-Science-280-Fall-2017-Lab-3-Team-<assigned team number>} and then accept the laboratory
+assignment and see that GitHub Classroom created a new GitHub repository for your team to access the assignment's
+starting materials and to store the completed version of your assignment. At this point, each additional member of the
+team can join it through GitHub. Please make sure that each of your team members joins the team to which the instructor
+assigned them to work. Remember, unless you provide the instructor with documentation of the extenuating circumstances
+that you are facing, not accepting the assignment means that you automatically receive a failing grade for it.
 
 Now you are ready to download the starting materials to your laboratory computer. Click the ``Clone or download'' button
 and, after ensuring that you have selected ``Clone with SSH'', please copy this command to your clipboard. To enter into
 your course directory you should now type \command{cd cs280F2017}. By typing \command{git clone} in your terminal and then
-pasting in the string that you copied from the GitHub site you will download all of the code for this assignment. 
-
-% For
-% instance, if the course instructor ran the \command{git clone} command in the terminal, it would look like:
-
-% \begin{lstlisting}
-%   git clone <Your Team's Customized GitHub Repository>
-% \end{lstlisting}
+pasting in the string that you copied from the GitHub site you will download all of the code for this assignment.
 
 Now, please study the \reflection{} in the repository. By reading this file you will learn how to run the \mainprogram{}
 program and observe that its output is not correct. The \reflection{} will also teach you how to run the provided test
@@ -218,57 +211,6 @@ program and ensure that it ultimately works correctly. If you need to modify the
 implementation, please carefully document your fix, making sure that the program produces the correct output and that
 all of the test cases pass. Finally, you should add at least four new test cases that establish a confidence in the
 correctness of your implementation.
-
-\section*{Eliciting Requirements from the Customer}
-
-You are responsible for implementing a data generator that should take a list of numbers as input and produce a list of
-lists as output. You are given the following specification for it.
-
-\begin{quote}
-
-For an input list of entities, $L$, the data generator must produce, in addition to the input list, all of the lists
-that can be obtained by swapping two adjacent items in $L$.
-
-\end{quote}
-
-\noindent
-For list $L = \{1, 2, 3, 4\}$, the customer wants the data generator to output $L'=\{L_0, \ldots, L_6\}$ with
-
-\begin{itemize}
-  \itemsep 0in
-  \item[] $L_0 = \{1, 2, 3, 4\}$
-  \item[] $L_1 = \{2, 1, 3, 4\}$
-  \item[] $L_2 = \{3, 2, 1, 4\}$
-  \item[] $L_3 = \{4, 2, 3, 1\}$
-  \item[] $L_3 = \{1, 3, 2, 4\}$
-  \item[] $L_4 = \{1, 4, 3, 2\}$
-  \item[] $L_6 = \{1, 2, 4, 3\}$
-\end{itemize}
-
-The customer knows that the component that you must create will be a part of a larger system that has not yet been
-fully implemented. You are responsible for implementing this data generator so that it functions according to the
-provided specification. However, please note that the stated requirements may not be entirely correct! It is the job
-of your team to interact with the customer to ensure that the system is implemented as desired. Using Markdown, you
-should write a requirements document that fully explains the inputs, outputs, and behavior of the data generator.
-
-\section*{Designing the System}
-
-Leveraging the content in the requirements document, you should create a design for your system, also drawing
-inspiration from the existing code as a starting point. As you are finalizing the design, you should try to develop
-answers to relevant questions such as: How many functions will you use? What will be the relationship between the
-functions? What parameters will the functions have? What will be the inputs and outputs of the functions? Is the design
-easy to understand? After answering these questions and studying the provided Python code, you should use Markdown to
-write a design document with text that explains the organization of the system.
-
-\section*{Implementing the System}
-
-Now, you should take the requirements and design documents and start to think about how the system will be fully
-implemented. Your task is to ensure that the program faithfully adheres to the descriptions that you already produced.
-When an aspect of the requirements and design documents is not clear, you will need to revisit it and try to resolve any
-outstanding concerns. Whenever you make changes to a requirements or design document, you should quickly commit any
-changes to your repository so as to best ensure that the requirements and design of the system are in sync with its
-implementation. After implementing a portion of your system, please make sure that you demonstrate it to the customer so
-as to ensure that it fulfills all of the project requirements.
 
 \section*{Evaluating Your Submission}
 
