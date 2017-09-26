@@ -165,6 +165,7 @@ your team members should read and discuss the content on the following web sites
 \vspace*{-.5em}
 
 \begin{itemize}
+  \setlength{\itemsep}{0pt}
   \item \url{https://guides.github.com/introduction/flow/}
   \item \url{https://help.github.com/articles/github-flow/}
   \item \url{https://help.github.com/categories/collaborating-with-issues-and-pull-requests/}
@@ -216,6 +217,26 @@ correctness of your implementation.
 
 \section*{Collaborating With Your Software Development Team}
 
+Your team should use the GitHub issue tracker to write out a description of each of the key tasks that you need to
+complete for this project. For now, the focus for these issues should be the features that you want your program to
+have; later you can also use the issue tracker to discuss shortcomings of different aspects of your system. Attempting
+to manage risk and estimate the effort required for individual team members to resolve these issues, now you should
+assign people to roles and tasks. While it is acceptable for you to have in-person discussions with your team members,
+please remember that all important discussions and decisions must be documented in GitHub.
+
+Since your each team member is an administrator for your team's GitHub repository, everyone can create ``branches''
+allocated to, for instance, each of the program features that you want to implement or the documentation that you want
+to write. Once a specific branch contains the finished version of its associated deliverable, a team member should
+create a pull request for discussion. If the team judges that the pull request has all of the expected characteristics,
+then it should be merged into the ``master'' branch of your repository. If the pull request is not accepted, then the
+team member should improve it until it meets each team member's expectations. Your team should continue to use this
+model, called ``GitHub flow'', to support the completion of all deliverables.
+
+For this assignment, you team should also report how well its Python source code scores with the \command{pylint3}.
+Whenever possible, you should resolve the issues raised by \command{pylint3} --- for instance, your source code files
+should always be correctly indented and there should always be the needed number of blank lines between functions.
+Finally, you should also check the Markdown files in your repository with both \command{mdl} and \command{proselint},
+resolving the identified issues whenever possible.
 
 \section*{Evaluating Your Submission}
 
@@ -282,8 +303,9 @@ met all of the requirements. Other factors will also influence your final grade 
 studying the efficiency and effectiveness of your Python source code, the instructor will also evaluate the accuracy of
 both your technical writing and the comments in your source code. If your submission receives a red \naughtmark{}, the
 instructor will reduce your grade for the assignment while still considering the regularity with which you committed to
-your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
-questions about the evaluation of this laboratory assignment.
+your repository and the overall quality of your partially completed work.
+
+% Please see the instructor if you have questions about the evaluation of this laboratory assignment.
 
 % \section*{Adhering to the Honor Code}
 
