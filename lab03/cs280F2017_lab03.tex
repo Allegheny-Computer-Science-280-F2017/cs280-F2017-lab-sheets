@@ -1,0 +1,312 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{September 26}
+\newcommand{\assignmentassignedate}{September 12}
+\newcommand{\assignmentnumber}{Two}
+
+\newcommand{\labyear}{2017}
+\newcommand{\labday}{Tuesday}
+\newcommand{\labtime}{2:30 pm}
+
+\newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{generator.py}}
+\newcommand{\mainprogramsource}{\lstinline{generator/generator.py}}
+\newcommand{\maintestsource}{\lstinline{generator/tests/test_generator.py}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{README.md}}
+
+% Commands to describe key git tasks
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 280}
+\lhead{Laboratory Assignment \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 280\\Introduction to Computer Science I\\
+      Fall 2017\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Laboratory \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Objectives}
+
+To continue to practice the use of GitHub to access the files for a laboratory assignment. You will also continue to
+practice using Slack to support communication with your colleagues and the course instructor. Next, you will continue to
+practice understanding a Python program's source code, revising a Markdown document, and running a test suite. You will
+also interact with a simulated customer, performing the tasks of verification and validation, giving demonstrations, and
+finding and fixing defect(s) in the specification and/or source code of a software application.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
+  this course's laboratory  assignments. If it is necessary for you to work on a different machine, be sure to regularly
+  transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a laboratory
+  computer and you need help with the configuration of your own laptop, then please carefully explain its setup to the
+  systems administrator or the course instructor when you are asking questions.
+
+\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
+  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell the course instructor what assignment step you
+  recently completed.
+
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory or practical session
+  and then join the appropriate channel. If you have a question about one of the steps in an assignment, then you can
+  post it to the designated channel. Or, you can ask a student sitting next to you or talk with course instructor in
+  person or through Slack.
+
+\item {\bf Store your files in GitHub}. Starting with this laboratory assignment, you will be responsible for storing
+  all of your files (e.g., Python source code and Markdown-based writing) in a Git repository using GitHub Classroom.
+  Please verify that you have saved your source code in your Git repository by using \command{git status} to ensure that
+  everything is updated. You can see if your assignment submission meets the established correctness requirements by
+  using the provided checking tools on your local computer and in checking the commits in GitHub.
+
+\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
+  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
+  laboratory, practical, and final project assignments.
+
+\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
+  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
+  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
+  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
+  files.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments require to you write technical
+  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
+  effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
+  instructor.
+
+\item {\bf Review the Honor Code on the syllabus}. While you may discuss your assignments with others, copying source
+  code or writing is a violation of Allegheny College's Honor Code.
+
+\end{itemize}
+
+\section*{Reading Assignment}
+
+If you have not done so already, please read all of the relevant ``GitHub Guides'', available at
+\url{https://guides.github.com/}, that explain how to use many of the features that GitHub provides. In particular,
+please make sure that you have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects on GitHub'';
+each of them will help you to understand how to use both GitHub and GitHub Classroom. To do well on this assignment, you
+should review Chapter 1 of the SETP textbook. You should also read Chapter 2 of SETP, paying particularly close
+attention to the stages in the software process models and the descriptions of any verification and validation tasks.
+Please see the course instructor if you have questions these reading assignments.
+
+\section*{Accessing the Laboratory Assignment on GitHub}
+
+To access the laboratory assignment, you should go into the \channel{\#announcements} channel in our Slack team and find
+the announcement that provides a link for it. Copy this link and paste it into your web browser. Now, you should accept
+the laboratory assignment and see that GitHub Classroom created a new GitHub repository for you to access the
+assignment's starting materials and to store the completed version of your assignment. Specifically, to access your new
+GitHub repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced
+with the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these
+steps, you should have created a GitHub repository with a name like
+``Allegheny-Computer-Science-280-Fall-2017/computer-science-280-fall-2017-lab-2-gkapfham''. Unless you provide the
+instructor with documentation of the extenuating circumstances that you are facing, not accepting the assignment means
+that you automatically receive a failing grade for it.
+
+Now you are ready to download the starting materials to your laboratory computer. Click the ``Clone or download'' button
+and, after ensuring that you have selected ``Clone with SSH'', please copy this command to your clipboard. To enter into
+your course directory you should now type \command{cd cs280F2017}. By typing \command{git clone} in your terminal and then
+pasting in the string that you copied from the GitHub site you will download all of the code for this assignment. For
+instance, if the course instructor ran the \command{git clone} command in the terminal, it would look like:
+
+\begin{lstlisting}
+  git clone git@github.com:/Allegheny-Computer-Science-280-F2017/computer-science-280-fall-2017-lab-2-gkapfham.git
+\end{lstlisting}
+
+Now, please study the \reflection{} in the repository. By reading this file you will learn how to run the \mainprogram{}
+program and observe that its output is not correct. The \reflection{} will also teach you how to run the provided test
+suite for this program and see that it fails. Please make sure that you carefully record your experiences when
+completing each of these and other steps and that you understand the purpose, input, and output of each command. Now,
+you will need to learn more about the Python programming language so that you can understand the requirements for this
+program and ensure that it ultimately works correctly. If you need to modify the program's specification or
+implementation, please carefully document your fix, making sure that the program produces the correct output and that
+all of the test cases pass. Finally, you should add at least four new test cases that establish a confidence in the
+correctness of your implementation.
+
+\section*{Eliciting Requirements from the Customer}
+
+You are responsible for implementing a data generator that should take a list of numbers as input and produce a list of
+lists as output. You are given the following specification for it.
+
+\begin{quote}
+
+For an input list of entities, $L$, the data generator must produce, in addition to the input list, all of the lists
+that can be obtained by swapping two adjacent items in $L$.
+
+\end{quote}
+
+\noindent
+For list $L = \{1, 2, 3, 4\}$, the customer wants the data generator to output $L'=\{L_0, \ldots, L_6\}$ with
+
+\begin{itemize}
+  \itemsep 0in
+  \item[] $L_0 = \{1, 2, 3, 4\}$
+  \item[] $L_1 = \{2, 1, 3, 4\}$
+  \item[] $L_2 = \{3, 2, 1, 4\}$
+  \item[] $L_3 = \{4, 2, 3, 1\}$
+  \item[] $L_3 = \{1, 3, 2, 4\}$
+  \item[] $L_4 = \{1, 4, 3, 2\}$
+  \item[] $L_6 = \{1, 2, 4, 3\}$
+\end{itemize}
+
+The customer knows that the component that you must create will be a part of a larger system that has not yet been
+fully implemented. You are responsible for implementing this data generator so that it functions according to the
+provided specification. However, please note that the stated requirements may not be entirely correct! It is the job
+of your team to interact with the customer to ensure that the system is implemented as desired. Using Markdown, you
+should write a requirements document that fully explains the inputs, outputs, and behavior of the data generator.
+
+\section*{Designing the System}
+
+Leveraging the content in the requirements document, you should create a design for your system, also drawing
+inspiration from the existing code as a starting point. As you are finalizing the design, you should try to develop
+answers to relevant questions such as: How many functions will you use? What will be the relationship between the
+functions? What parameters will the functions have? What will be the inputs and outputs of the functions? Is the design
+easy to understand? After answering these questions and studying the provided Python code, you should use Markdown to
+write a design document with text that explains the organization of the system.
+
+\section*{Implementing the System}
+
+Now, you should take the requirements and design documents and start to think about how the system will be fully
+implemented. Your task is to ensure that the program faithfully adheres to the descriptions that you already produced.
+When an aspect of the requirements and design documents is not clear, you will need to revisit it and try to resolve any
+outstanding concerns. Whenever you make changes to a requirements or design document, you should quickly commit any
+changes to your repository so as to best ensure that the requirements and design of the system are in sync with its
+implementation. After implementing a portion of your system, please make sure that you demonstrate it to the customer so
+as to ensure that it fulfills all of the project requirements.
+
+\section*{Evaluating Your Submission}
+
+The source code for the \mainprogram{} should now contain the correct implementation. Next, all of the source code in
+your test suite and your \mainprogram{} should have thoughtful and clear comments. Also, all of your Markdown files
+(e.g., the one with a reflection) must meet the standards described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, all of your Markdown files should also adhere to
+the Markdown standards established by the \step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/}
+
+After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
+\gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
+your assignment, checking to see if it meets all of the requirements. If both your source code and writing meet all of
+the established requirements, then you will see a green \checkmark{} in the listing of commits in GitHub after awhile.
+If your submission does not meet the requirements, a red \naughtmark{} will appear instead. The instructor will reduce a
+student's grade for this assignment if the red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit in your GitHub repository, then you
+satisfied all of the main checks, thereby allowing the course instructor to evaluate other aspects of your source code
+and writing, as further described in this assignment sheet. Unless you provide the course instructor with documentation
+of the extenuating circumstances that you are facing, no late work will be considered towards your grade for this
+laboratory assignment.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical writing for any assignment in this course.
+Instead, this assignment invites you to submit, using GitHub, the following deliverables.
+
+\begin{enumerate}
+
+\setlength{\itemsep}{0in}
+
+\item Stored in \reflection{}, a three-paragraph reflection on the challenges that you faced, the defects in the program
+  and/or its specification, and how you performed verification and validation. This Markdown-based document should
+  provide sufficient detail to illustrate that you fully understand how the provided requirements and/or implementation
+  contain mistakes.
+
+\item Stored in two additional and separate Markdown documents with appropriate names, requirements and design documents
+  that clearly explain what the \mainprogramsource{} program should do and how its main components will be organized
+  into a cohesive system.
+
+\item A properly documented, well-formatted, and correct version of \mainprogramsource{} that both meets all of the
+  established requirements and produces the desired output.
+
+\item A properly documented, well-formatted, and correct version of \maintestsource{} that both meets all of the
+  established requirements and passes correctly.
+
+\end{enumerate}
+
+\section*{Evaluation of Your Laboratory Assignment}
+
+Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
+on this assignment and feedback on your submitted deliverables. Your grade for the assignment will be a function of the
+whether or not it was submitted in a timely fashion and if your program received a green \checkmark{} indicating that it
+met all of the requirements. Other factors will also influence your final grade on the assignment. In addition to
+studying the efficiency and effectiveness of your Python source code, the instructor will also evaluate the accuracy of
+both your technical writing and the comments in your source code. If your submission receives a red \naughtmark{}, the
+instructor will reduce your grade for the assignment while still considering the regularity with which you committed to
+your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
+questions about the evaluation of this laboratory assignment.
+
+% \section*{Adhering to the Honor Code}
+
+% In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
+% for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a problem with others and the student who produces
+% assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., Python source code
+% or Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of
+% violating the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+
+\end{document}
