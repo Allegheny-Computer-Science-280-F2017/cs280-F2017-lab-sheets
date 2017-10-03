@@ -7,7 +7,7 @@ script:
 - latexmk -pdf -outdir=_build lab01/cs280F2017_lab01.tex
 - latexmk -pdf -outdir=_build lab02/cs280F2017_lab02.tex
 - latexmk -pdf -outdir=_build lab03/cs280F2017_lab03.tex
-- latexmk -pdf -outdir=_build lab03/cs280F2017_lab04.tex
+- latexmk -pdf -outdir=_build lab04/cs280F2017_lab04.tex
 deploy:
   provider: releases
   api_key:
