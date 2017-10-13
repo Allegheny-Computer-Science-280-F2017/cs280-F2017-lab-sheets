@@ -18,7 +18,7 @@ deploy:
     - _build/cs280F2017_lab02.pdf
     - _build/cs280F2017_lab03.pdf
     - _build/cs280F2017_lab04.pdf
-    - _build/cs280F2017_studyguide_exam01.tex
+    - _build/cs280F2017_studyguide_exam01.pdf
   skip_cleanup: true
   on:
     tags: true
