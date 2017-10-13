@@ -8,6 +8,7 @@ script:
 - latexmk -pdf -outdir=_build lab02/cs280F2017_lab02.tex
 - latexmk -pdf -outdir=_build lab03/cs280F2017_lab03.tex
 - latexmk -pdf -outdir=_build lab04/cs280F2017_lab04.tex
+- latexmk -pdf -outdir=_build exam1/cs280F2017_studyguide_exam01.tex
 deploy:
   provider: releases
   api_key:
@@ -17,6 +18,7 @@ deploy:
     - _build/cs280F2017_lab02.pdf
     - _build/cs280F2017_lab03.pdf
     - _build/cs280F2017_lab04.pdf
+    - _build/cs280F2017_studyguide_exam01.tex
   skip_cleanup: true
   on:
     tags: true
