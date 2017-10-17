@@ -1,0 +1,329 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{October 17}
+\newcommand{\assignmentassignedate}{October 3}
+\newcommand{\assignmentnumber}{Four}
+
+\newcommand{\labyear}{2017}
+\newcommand{\labday}{Tuesday}
+\newcommand{\labtime}{2:30 pm}
+
+\newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{generator.py}}
+\newcommand{\mainprogramsource}{\lstinline{generator/generator.py}}
+\newcommand{\maintestsource}{\lstinline{generator/tests/test_generator.py}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{README.md}}
+
+% Commands to describe key git tasks
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 280}
+\lhead{Laboratory Assignment \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 280\\Software Engineering\\
+      Fall 2017\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Laboratory \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Objectives}
+
+The focus of this assignment is on applying effective project management and team work strategies to enhance an existing
+open-source project that is available on GitHub. Using GitHub and the ``GitHub flow'' model, you will work in an
+assigned team to specify, design, implement, test, document, and release a fully functioning programming systems product
+that can be deployed into immediate use. For this laboratory assignment, your team will work with the other teams in the
+class to collaboratively complete all of the features requested by the on-site customer.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
+  this course's laboratory  assignments. If it is necessary for you to work on a different machine, be sure to regularly
+  transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a laboratory
+  computer and you need help with the configuration of your own laptop, then please carefully explain its setup to the
+  systems administrator or the course instructor when you are asking questions.
+
+\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
+  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell the course instructor what assignment step you
+  most recently completed.
+
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory session and then join
+  the appropriate channel. If you have a question about one of the steps in an assignment, then you can post it to the
+  designated channel. Or, you can ask one of your team members or talk with course instructor in person or through
+  Slack.
+
+\item {\bf Store all your deliverables in GitHub}. As in past laboratory assignments, you will be responsible for
+  storing all of your files (e.g., Python source code and Markdown-based writing) in a Git repository using GitHub and
+  GitHub Classroom. Please verify that you have saved your source code in your Git repository by using \command{git
+  status} to ensure that everything is updated. You can see if your assignment submission meets the established
+  correctness requirements by using the provided checking tools on your local computer and in checking the commits in
+  GitHub. Additionally, your team should perform all project management and communication tasks through GitHub. That is,
+  all discussions about your programming systems product and the source code of and documentation for it must be
+  available in GitHub.
+
+\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
+  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
+  laboratory and final project assignments.
+
+\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
+  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
+  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
+  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
+  files.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments require to you write technical
+  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
+  effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
+  instructor.
+
+\item {\bf Review the Honor Code on the syllabus}. While you may discuss your assignments with others, copying source
+  code or writing is a violation of Allegheny College's Honor Code.
+
+\end{itemize}
+
+\vspace*{-1em}
+
+\section*{Reading Assignment}
+
+If you have not done so already, please read all of the relevant ``GitHub Guides'', available at
+\url{https://guides.github.com/}, that explain how to use many of the features that GitHub provides. In particular,
+please make sure that you have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects on GitHub'';
+each of them will help you to understand how to use both GitHub and GitHub Classroom. To do well on this assignment, you
+should review Chapters 1 and 2 of the SETP textbook. You should also read Chapter 3 and 4 of SETP, paying particularly
+close attention to the content about strategies for project management and requirements elicitation. To ensure that your
+team understands what kind of product it must collaboratively implement, please review Chapter 1 in MMM, focusing on the
+definition of a programming systems product. Finally, you and your team members should read and discuss the content on
+these web sites:
+
+\vspace*{-.5em}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \item \url{https://guides.github.com/introduction/flow/}
+  \item \url{https://help.github.com/articles/github-flow/}
+  \item \url{https://help.github.com/categories/collaborating-with-issues-and-pull-requests/}
+\end{itemize}
+
+\vspace*{-1em}
+
+\section*{Organizing Your Software Development Team}
+
+You should organize yourselves into the teams given in the \channel{\#announcements} channel in our Slack team. After
+reviewing the reading assignments mention in the previous section and discussing the software that you are invited to
+implement for this assignment, your team should discuss how it will complete this project's tasks. As you are making
+task assignments, please think about the unique skillset of each member of your development team. When it seems as
+though there are no team members who best fit certain roles, you should make compromises to ensure that all work will
+still be successfully finished. Your assignment of people to roles should ensure that individuals have the opportunity
+to explore new tasks and learn more about many software engineering tasks.
+
+Importantly, your team must complete this assignment in conjunction with the other teams in this class. As such, it is a
+good idea for your project manager to coordinate with the other project managers to decide the best way to allocate
+tasks to the separate teams and team members. While it is up to the class to decide, it also may be a good idea for the
+teams to identify several project managers who will agree to coordinate this project and approve all of the pull
+requests. Remember, it is important for the project managers to ensure that all of their members know how to effectively
+use GitHub and then make a plan for how you will control your source code and documentation and communication using
+GitHub features like the issue tracker, commit log, and pull requests. Students who do not know how to use these
+features of GitHub should immediately schedule a meeting with the course instructor and ask their project manager any
+questions about this matter. Remember, your grade for this assignment is a function of the work that you completed and
+documented through the main project's GitHub repository and reported on in your private repository's \reflection{}.
+Please see the instructor if you do not understand this grading strategy.
+
+\section*{Accessing the Laboratory Assignment on GitHub}
+
+To access the laboratory assignment, you should go into the \channel{\#announcements} channel in our Slack team and find
+the announcement that provides a link for it. Copy this link and paste it into your web browser. Now, you should accept
+the laboratory assignment and see that GitHub Classroom created a new GitHub repository for you to access the
+assignment's starting materials and to store the completed version of your assignment. Specifically, to access your new
+GitHub repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced
+with the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these
+steps, you should have created a GitHub repository with a name like
+``Allegheny-Computer-Science-280-Fall-2017/computer-science-280-fall-2017-lab-4-gkapfham''. Unless you provide the
+instructor with documentation of the extenuating circumstances that you are facing, not accepting the assignment means
+that you automatically receive a failing grade for it.
+
+You will use this GitHub repository to obtain a link to the GitHub project that you will enhance for this assignment.
+Notably, the course instructor will give add you as a collaborator to the GitHub repository for this assignment once you
+have accepted the assigned in the \channel{\#announcements} channel and you have uploaded a professional profile picture
+to GitHub. You will also use the \reflection{} file in this repository to report on all of the work that you completed
+and review the work that your team and class members completed. Specifically, you should use the \reflection{} file to
+evaluate the effectiveness of your team and the other teams, commenting on who completed what work and how well the work
+was completed. Considering the definitions given in MMM, you should also assess the quality of the programming systems
+product that the class completed by the deadline.
+
+As in past assignments, you can click the ``Clone or download'' button and, after ensuring that you have selected
+``Clone with SSH'', please copy this command to your clipboard. To enter your course directory you should now type
+\command{cd cs280F2017}. By typing \command{git clone} in your terminal and then pasting in the string that you copied
+from the GitHub site you will download all of the code for this assignment. Before starting the assignment, make sure
+that each of your team members has access to their own private repository and they understand what type of content they
+should include in the \reflection{} file. Please see the instructor with questions about this step.
+
+\section*{Collaborating With Your Software Development Team}
+
+Your team should review the GitHub issue tracker for a description of each of the key tasks that you need to complete
+for this project. Attempting to manage risk and estimate the effort required for individual team members to resolve
+these issues, you should now assign people to roles and tasks. While it is acceptable for you to have in-person
+discussions with your team members, please remember that all important discussions and decisions must be documented in
+GitHub. Finally, don't forget that you are completing this assignment in conjunction with the other teams in the course
+--- the class should consider identifying project managers who will coordinate this project.
+
+Your team should work with the customer to prioritize the implementation of the issues currently raised in the project's
+issue tracker. When you are not sure how to implement a requirement, then you must clarify the matter with the customer
+and with the other members of the team. Don't forget that your work will be evaluated according to the standards
+established on the final page of this assignment sheet. Please see the instructor if you do not know how to
+effectively collaborate.
+
+Since each team member is an administrator the project's GitHub repository, everyone can create ``branches'' allocated
+to, for instance, each of the program features that you want to implement or the documentation that you want to write.
+Once a specific branch contains the finished version of its associated deliverable, a team member should create a pull
+request for discussion. If a project manager judges that the pull request has all of the expected characteristics, then
+it should be merged into the ``master'' branch of your repository. If the pull request is not accepted, then the team
+member should improve it until it meets everyone's expectations. Your team should continue to use this model, called
+``GitHub flow'', to support the completion of all deliverables.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical writing for any assignment in this course.
+Instead, this assignment invites you to submit, using GitHub, the following deliverables.
+
+\begin{enumerate}
+
+\setlength{\itemsep}{0in}
+
+\item Stored in \reflection{}, a reflection on your contributions to the group project and the contributions made by
+  your team members and the other members of this class. Refer to the relevant sections of this sheet for details about
+  what to write in your repository's \reflection{} file.
+
+\item A properly documented, well-formatted, and correct version of all of the source code needed to fulfill the
+  requirements given in the issue tracker of the GitHub repository for this project.
+
+\item Stored in the \reflection{} file of the project's GitHub repository, user documentation that handles all of the
+  issues raised in the issue tracker of the GitHub repository for this project.
+
+\end{enumerate}
+
+\vspace*{-1em}
+
+\section*{Evaluation of Your Laboratory Assignment}
+
+Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
+on this assignment and feedback on your deliverables. The instructor will also evaluate the effectiveness with which the
+teams and the class completed the assignment.
+
+% Your grade for the assignment will be a function of the whether or not it was submitted in a timely fashion. Other
+% factors will also influence your final grade on the assignment. In addition to studying the efficiency and effectiveness
+% of your Python source code, the instructor will also evaluate the accuracy of both your technical writing and the
+% comments in your source code.
+
+The instructor will assess team effectiveness as {\bf excellent} when all of these standards are met:
+
+\vspace*{-.5em}
+
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+
+  \item All team members regularly contribute, in a timely fashion, to the GitHub project through the issue tracker,
+    pull requests, and the committing of source code and documentation.
+
+  \item All team members contribute correct, useful Python source code and/or Markdown documentation that supports the
+    creation of a working and valuable programming systems product.
+
+  \item All team members participate in the classroom discussions, sharing status updates and ideas.
+
+  \item All team members regularly communicate with others in a respectful and informative manner.
+
+  \item All team members work with others and the instructor to resolve any differences that arise.
+
+\end{enumerate}
+
+\vspace*{-.5em}
+
+The instructor will assess team effectiveness as {\bf good} when the majority of the team members fulfill the
+aforementioned standards. The team's effectiveness will be assessed as {\bf average} when some, but not the majority, of
+the team members make meaningful contributions to the project, according to these set standards. The course instructor
+will assess team effectiveness as {\bf below average} when, as a whole, the team does not function according to the
+above standards.
+
+The instructor will assess product quality as {\bf excellent} when, by the established deadline, the product's GitHub
+repository contains a full programming systems product that contains: clear and useful documentation, a comprehensive
+and passing test suite that effectively covers the code base, and correct implementations of all, or the majority of,
+the requirements listed in the issue tracker. The instructor will assess product quality as {\bf good} when all of the
+aforementioned standards are met, but some of the requirements are not fully implemented or not implemented correctly.
+The product's quality will be assessed as {\bf average} when some, but not the majority, of the requirements are
+properly fulfilled. The course instructor will assess product quality as {\bf below average} when, as a whole, the
+product does not feature new requirements or there is a regression in functionality.
+
+Every student will receive the same baseline grade for team effectiveness and product quality. However, an individual
+student grade will be adjusted higher or lower according to their contribution's to the project, as reflected in the
+material that they and others include in the \reflection{} file of the private GitHub repository and in the public
+repository of the project's GitHub repository.
+
+\end{document}
