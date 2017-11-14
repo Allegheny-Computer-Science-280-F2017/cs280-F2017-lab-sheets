@@ -35,6 +35,11 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
+% Command for writing authors of a paper
+
+\usepackage{xspace}
+\newcommand{\etal}{et al.\xspace}
+
 % Use this when displaying a new command
 
 \newcommand{\command}[1]{``\lstinline{#1}''}
@@ -171,6 +176,17 @@ itself and in its documentation.
 
 \section*{GatorGauge: A Tool for Characterizing Programs at Scale}
 
+In a paper entitled ``HappyFace: Identifying and Predicting Frustrating Obstacles for Learning Programming at Scale'',
+Drosos~\etal{} describe a software tool, called HappyFace, that allows programmers to report when they are frustrated
+during the completion of a programming exercise. For this final project, you will implement GatorGauge, a system
+inspired by the aforementioned paper. Instead of requiring an enhanced integrated development environment, as is the
+case for the HappyFace system and its reliance on PythonTutor, GatorGauge will accept as input a directory that contains
+all of the GitHub repositories for every student and every laboratory assignment submission for an entire semester of an
+introductory computer science course using GitHub Classroom. Working with the instructor, this directory should be
+created by interaction with GitHub. While there are many tools that enable the downloading of all the GitHub
+repositories in an organization, you are encouraged to explore the use of
+\url{https://github.com/danwallach/github-clone-all}, which has been tested by the course instructor and determined to
+be suitable for this first task.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
