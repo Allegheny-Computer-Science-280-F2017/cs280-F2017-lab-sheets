@@ -201,7 +201,25 @@ with your customer.
     multiple-line comments and that it can, additionally, extract the natural language text of each comment. In addition
     to counting the comments and reporting relevant summary statistics concerning these counts across all students and
     all GitHub repositories, GatorGauge should apply natural language processing techniques extract both keywords and
-    the commonly expressed topics in the source code comments.
+    the commonly expressed topics in the source code comments. \\[.5em] \noindent {\em Suggested Tools\/}: The comment
+    analysis functions in GatorGrader, available on GitHub.
+
+  \item {\bf Java Source Code}: The tool should extract, count, and analyze the Java source code in every one of the
+    GitHub repositories in the provided directory. This feature will require GatorGauge to parse Java source code and,
+    for instance, extract details about the number of lines of source code and the number of declared variables in each
+    of the Java source code files. In addition to counting these entities, GatorGauge should provide summary statistics.
+    \\[.5em] \noindent {\em Suggested Resources\/}: Online tutorials about regular expressions in the Python language.
+
+  \item {\bf GitHub Commits}: The tool should extract, count, and analyze the GitHub commits associated with every one
+    of the GitHub repositories in the provided directory. This feature will require GatorGauge to have functionality
+    that enables it to run \command{git} commands and process their output. Once the commit logs are accessible to
+    GatorGauge, the tool should, for instance, count the number of commits, process the commit messages, and examine the
+    changed code in each commit, surfacing interesting patterns. Leveraging ideas from the HappyFace system, future uses
+    of the GatorGauge tool might invite students to include an affective emoji in each of their commits, thereby
+    enabling the tool to assess the affective state of a programmers when they commit code. Additionally, GatorGauge can
+    use natural language processing to extract the keywords, topics, and emotions associated with the commits. \\[.5em]
+    \noindent {\em Suggested Tools\/}: The GitPython, dulwich, sh, and plumbum packages, available on GitHub.
+
 
 \end{itemize}
 
