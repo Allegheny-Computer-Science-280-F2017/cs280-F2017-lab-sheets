@@ -108,14 +108,14 @@
 Building on the knowledge and skills that you acquired in the previous laboratory assignments, in this final project,
 you will specify, design, implement, test, document, and maintain a complete programming systems product. Specifically,
 the goal of this final project is to ensure that you have the opportunity to explore and master all of the activities of
-every phase of the software engineering lifecycle. The ultimate software product resulting from your collaborative work
+every phase in the software engineering lifecycle. The ultimate software product resulting from your collaborative work
 on this final project is a useful, yet complex, system that solves an important problem. Specifically, you will create a
 system, called GatorGauge, that automatically analyzes the GitHub repositories that contain laboratory solutions
 submitted by students in an introductory computer science course. GatorGauge will then present insights about how these
 novice programmers completed their assignments, surfacing relevant points about how they, for instance, programmed in
 Java and used GitHub. As in previous assignments, you will continue to apply effective project management and team work
 strategies to create an open-source project that is available on GitHub. Using the ``GitHub flow'' model, you will
-improve and evaluate these projects and the processes that governed their creation.
+develop and merge feature branches into the main GatorGauge project.
 
 \section*{Reviewing the Prior Programming Systems Products}
 
@@ -176,7 +176,7 @@ current final project are encouraged to speak to the course instructor during of
 reuse source code from one of the aforementioned GitHub repositories, you must properly document this reuse in the code
 itself and in its documentation.
 
-\section*{GatorGauge: A Tool for Characterizing Programs at Scale}
+\section*{GatorGauge: A Tool for Characterizing Programming at Scale}
 
 In a paper entitled ``HappyFace: Identifying and Predicting Frustrating Obstacles for Learning Programming at Scale'',
 Drosos~\etal{} describe a software tool, called HappyFace, that allows programmers to report when they are frustrated
@@ -193,8 +193,8 @@ be suitable for this first task.
 GatorGauge should accept an input parameter that specifies the directory containing the subdirectories that are the
 GitHub repositories for every student and laboratory assignment. Then, GatorGauge will traverse all of these
 directories, using functions that enable it to, for instance, find all of the Java source code files or the natural
-language reflections stored in Markdown files. Next, GatorGauge should provide the following features, to be confirmed
-with your customer.
+language reflections stored in Markdown files. GatorGauge should provide the following features, to be confirmed with
+your team and the customer.
 
 \begin{itemize}
 
@@ -202,7 +202,7 @@ with your customer.
     programming langauge files. This feature will require that GatorGauge can differentiate between single-line and
     multiple-line comments and that it can, additionally, extract the natural language text of each comment. In addition
     to counting the comments and reporting relevant summary statistics concerning these counts across all students and
-    all GitHub repositories, GatorGauge should apply natural language processing techniques extract both keywords and
+    all GitHub repositories, GatorGauge should apply natural language processing techniques to extract both keywords and
     the commonly expressed topics in the source code comments. \\[.5em] \noindent {\em Suggested Tools\/}: The comment
     analysis functions in GatorGrader, available on GitHub.
 
@@ -218,13 +218,14 @@ with your customer.
     GatorGauge, the tool should, for instance, count the number of commits, process the commit messages, and examine the
     changed code in each commit, surfacing interesting patterns. Leveraging ideas from the HappyFace system, future uses
     of the GatorGauge tool might invite students to include an affective emoji in each of their commits, thereby
-    enabling the tool to assess the affective state of a programmers when they commit code. Additionally, GatorGauge can
-    use natural language processing to extract the keywords, topics, and emotions associated with all of the commits. \\[.5em]
-    \noindent {\em Suggested Tools\/}: The GitPython, dulwich, sh, and plumbum packages, available on GitHub.
+    enabling the tool to assess the affective state of programmers when they commit source code. Additionally,
+    GatorGauge can use natural language processing to extract the keywords, topics, and emotions associated with all of
+    the commits. \\[.5em] \noindent {\em Suggested Tools\/}: The GitPython, dulwich, sh, and plumbum packages, available
+    on GitHub.
 
   \item {\bf Technical Writing}: As the laboratory assignments in introductory computer science classes at Allegheny
     College require students to write technical reports and reflections, the GatorGauge tool should have features that
-    can analyze the Markdown-based documents. Once these files are available to GatorGauge, it should use natural
+    can analyze these Markdown-based documents. Once these files are available to GatorGauge, it should use natural
     language processing to extract keywords, topics, and emotions associated with the writing for each of the laboratory
     assignments and across all of the students. This analysis should be customized to the writing prompts for each
     assignment: for instance, if one reflection is about technical challenges and another is about teamwork, then
@@ -236,10 +237,10 @@ with your customer.
 Ultimately, the goal of the GatorGauge tool is to analyze and understand the GitHub repositories that novice programmers
 create when they complete laboratory assignments. The understanding that GatorGauge automatically produces will serve
 two critical roles. First, it will enable course instructors to understand, across a significant number of diverse
-solution, the challenges that students face when completing laboratory assignments. This understanding would then allow
+solutions, the challenges that students face when completing laboratory assignments. This understanding would then allow
 an instructor to revise the assignment so as to avoid pitfalls that students commonly faced. Secondly, a course
 instructor can present the results from GatorGauge's analysis to the students either during a course or in a follow-on
-semester of the course. This will then ensure that students are aware of the challenges were faced in completing an
+edition of the course. This will then ensure that students are aware of the challenges that were faced in completing an
 assignment, thus ensuring that they can better manage their time and improving their awareness of key difficulties.
 Right now, the many GitHub repositories that students create in introductory computer science classes remain largely
 unanalyzed --- GatorGauge will solve this problem by surfacing interesting and actionable insights!
@@ -247,7 +248,7 @@ unanalyzed --- GatorGauge will solve this problem by surfacing interesting and a
 \section*{Organizing Your Team and Preparing for Demonstrations}
 
 The course instructor expects that the software engineering team tasked with creating GatorGauge will give a
-demonstration of all working features on November 21 and 28 and December 5. Then, you will give a demonstration of a
+demonstration of any working features on November 21 and 28 and December 5. Then, you will give a demonstration of a
 full-featured version of GatorGauge during the laboratory session on Tuesday, December 12, 2017. The final submission of
 GatorGauge's code and documentation is due by 9:00 am on December 18, 2017, the Monday after the course's final
 examination. The class should identify 3 to 5 project managers who will oversee the development and documentation of
@@ -297,7 +298,7 @@ following deliverables.
 
 \setlength{\itemsep}{0in}
 
-\item Stored in a \reflection{} file, a reflection on your contributions to the three projects and the contributions
+\item Stored in a \reflection{} file, a reflection on your contributions to the GatorGauge project and the contributions
   made by the other members of this class. Refer to the relevant sections of this sheet for details about what to write
   in your repository's \reflection{} file. Notably, you must thoughtfully evaluate your work and the work of the other
   class members, including source code and documentation, for the GatorGauge project that is the focus of this
@@ -350,11 +351,11 @@ The product's quality will be assessed as {\bf average} when some, but not the m
 properly fulfilled. The course instructor will assess product quality as {\bf below average} when, as a whole, the
 product does not feature new requirements or there is a regression in functionality.
 
-The course instructor expects that each of the three projects will be fully completed and ready for use by instructors
-and/or students in the Department of Computer Science. For the GatorGauge final project, every student will receive the
-same baseline grade for team effectiveness and product quality. However, an individual student grade will be adjusted
-higher or lower according to their contribution's to the project, as reflected in the material that they and others
-include in the \reflection{} file of the private GitHub repository and in the public repository of each project's GitHub
-repository. Please see the instructor if you have questions about the grading of this assignment.
+The course instructor expects that the entire GatorGauge project will be fully completed and ready for use by
+instructors and/or students in the Department of Computer Science. For the GatorGauge final project, every student will
+receive the same baseline grade for team effectiveness and product quality. However, an individual student grade will be
+adjusted higher or lower according to their contributions to the project, as reflected in the material that they and
+others include in the \reflection{} file of the private GitHub repository and in the public repository of the project's
+GitHub repository. Please see the instructor if you have questions about the grading of this assignment.
 
 \end{document}
