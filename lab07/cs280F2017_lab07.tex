@@ -217,11 +217,30 @@ with your customer.
     changed code in each commit, surfacing interesting patterns. Leveraging ideas from the HappyFace system, future uses
     of the GatorGauge tool might invite students to include an affective emoji in each of their commits, thereby
     enabling the tool to assess the affective state of a programmers when they commit code. Additionally, GatorGauge can
-    use natural language processing to extract the keywords, topics, and emotions associated with the commits. \\[.5em]
+    use natural language processing to extract the keywords, topics, and emotions associated with all of the commits. \\[.5em]
     \noindent {\em Suggested Tools\/}: The GitPython, dulwich, sh, and plumbum packages, available on GitHub.
 
+  \item {\bf Technical Writing}: As the laboratory assignments in introductory computer science classes at Allegheny
+    College require students to write technical reports and reflections, the GatorGauge tool should have features that
+    can analyze the Markdown-based documents. Once these files are available to GatorGauge, it should use natural
+    language processing to extract keywords, topics, and emotions associated with the writing for each of the laboratory
+    assignments and across all of the students. This analysis should be customized to the writing prompts for each
+    assignment: for instance, if one reflection is about technical challenges and another is about teamwork, then
+    GatorGauge should account for these differences. \\[.5em] \noindent {\em Suggested Tools\/}: The Gensim, nltk, and
+    TextBlob packages, available on GitHub.
 
 \end{itemize}
+
+Ultimately, the goal of the GatorGauge tool is to analyze and understand the GitHub repositories that novice programmers
+create when they complete laboratory assignments. The understanding that GatorGauge automatically produces will serve
+two critical roles. First, it will enable course instructors to understand, across a significant number of diverse
+solution, the challenges that students face when completing laboratory assignments. This understanding would then allow
+an instructor to revise the assignment so as to avoid pitfalls that students commonly faced. Secondly, a course
+instructor can present the results from GatorGauge's analysis to the students either during a course or in a follow-on
+semester of the course. This will then ensure that students are aware of the challenges were faced in completing an
+assignment, thus ensuring that they can better manage their time and improving their awareness of key difficulties.
+Right now, the many GitHub repositories that students create in introductory computer science classes remain largely
+unanalyzed --- GatorGauge will solve this problem by surfacing interesting and actionable insights!
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
