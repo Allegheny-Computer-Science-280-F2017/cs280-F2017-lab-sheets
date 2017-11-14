@@ -100,68 +100,6 @@ identifying areas in which they can be improved. Next, you will continue to appl
 work strategies to enhance and maintain these open-source projects that are available on GitHub. Using the ``GitHub
 flow'' model, you will improve and evaluate these projects and the processes that governed their creation.
 
-\section*{Suggestions for Success}
-
-\begin{itemize}
-  \setlength{\itemsep}{0pt}
-
-\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
-  this course's laboratory  assignments. If it is necessary for you to work on a different machine, be sure to regularly
-  transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a laboratory
-  computer and you need help with the configuration of your own laptop, then please carefully explain its setup to the
-  systems administrator or the course instructor when you are asking questions.
-
-\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
-  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
-  the challenges that you faced. If you are stuck, then please tell the course instructor what assignment step you
-  most recently completed.
-
-\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory session and then join
-  the appropriate channel. If you have a question about one of the steps in an assignment, then you can post it to the
-  designated channel. Or, you can ask one of your team members or talk with course instructor in person or through
-  Slack.
-
-\item {\bf Store all your deliverables in GitHub}. As in past laboratory assignments, you will be responsible for
-  storing all of your files (e.g., Python source code and Markdown-based writing) in a Git repository using GitHub and
-  GitHub Classroom. Please verify that you have saved your source code in your Git repository by using \command{git
-  status} to ensure that everything is updated. You can see if your assignment submission meets the established
-  correctness requirements by using the provided checking tools on your local computer and in checking the commits in
-  GitHub. Additionally, your team should perform all project management and communication tasks through GitHub. That is,
-  all discussions about your programming systems product and the source code of and documentation for it must be
-  available in GitHub.
-
-\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
-  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
-  laboratory and final project assignments.
-
-\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
-  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
-  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
-  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
-  files.
-
-\item {\bf Hone your technical writing skills}. Computer science assignments require you to write technical
-  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
-  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
-  effectively communicate and collaborate with both their team members and the course instructor.
-
-\item {\bf Review the Honor Code on the syllabus}. While you may discuss your assignments with others, copying source
-  code or writing is a violation of Allegheny College's Honor Code.
-
-\end{itemize}
-
-\vspace*{-1em}
-
-\section*{Reading Assignment}
-
-If you have not done so already, please read all of the relevant ``GitHub Guides'', available at
-\url{https://guides.github.com/}, that explain how to use many of the features that GitHub provides. In particular,
-please make sure that you have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects on GitHub'';
-each of them will help you to understand how to use both GitHub and GitHub Classroom. To do well on this assignment, you
-should read Chapter 7 of SETP, paying particularly close attention to the types of internal and external documentation
-that engineers should develop for their software. Finally, to review the steps associated with the ``GitHub flow''
-model, you should review the web sites referenced in the last two assignments.
-
 \section*{Reviewing the Prior Programming Systems Products}
 
 In the past two laboratory assignments, students in this class implemented three programming systems products, that are
@@ -214,55 +152,8 @@ Students can access the current version of these three software tools by visitin
   \item \url{https://github.com/Accelegator/accelegator}
 \end{enumerate}
 
+\section*{GatorGauge: A Tool for Characterizing Programs at Scale}
 
-\section*{Evaluating and Improving a Programming Systems Product}
-
-Now that you understand these systems, you should identify at least three and no more than five members of the class who
-will, going forward, serve as the maintainers for a project. Please note that no student can serve as the maintainer for
-more than one of the projects. Each student who is a project maintainer will be responsible for overseeing and
-maintaining their project, vetting the pull requests associated with any forthcoming defect fixes or enhancements.
-Students who are not project managers are responsible for downloading and using all three of the software tools, raising
-issues and creating pull requests for each of them. Students who are project managers only need to evaluate and try to
-improve the two systems for which they are not a manager; for their own projects, these students only need to manage any
-of the raised issues and pull requests.
-
-Once you have talked to the customer and your classmates so as to best understand the purpose of each project, you
-should visit their GitHub pages and follow their {\tt README.md} files to download, install, and use them, taking care
-to start with a new repository. As you are completing this task, you should first determine whether or not there are any
-major defects in the system's implementation or documentation. If there are major problems, then you should first raise
-an issue in the project's issue tracker and then work to resolve this defect. Alternatively, if you notice that the
-system requires certain minor enhancements, then you should also raise an issue and then work to create the new feature.
-As you focus first on major concerns and then consider enhancements, please ensure that you follow the GitHub flow model
-and coordinate with the project's managers.
-
-You should evaluate the quality of the internal documentation for each project, focusing on the source code comments,
-the use of meaningful variable names and statement labels, proper source code formatting, and the documentation of the
-program's data sources and structures. Next, you should carefully study the project's external documentation, ensuring
-that it is self-contained and that it clearly describes the problem, the methods used to solve the problem, and the
-sources and structure of the data. Ultimately, you must ensure that all aspects of the program's documentation correctly
-describe the system and serve to encourage and support the people who use it.
-
-Next, you should study the test cases for each of the projects. Do these tests following a plan? Are there enough test
-cases to adequately cover the source code? If there is a need for more test cases, then where do you suggest that they
-be added? In addition to investigating these issues, you should determine whether or not there are redundant test cases,
-some of which should now be removed from the GitHub repository. Finally, you should ensure that each project's
-documentation explains how to run the provided test suite using the {\tt pytest} testing framework.
-
-Please note that it is not the responsibility of the project managers to tell the students in the course how to improve
-the three software projects. Instead, each student is responsible for downloading, installing, using, and fully
-improving each project. The instructor will assess students according to both the number and quality of the issues that
-they raised and the number and quality of the pull requests that they created and saw merged. For the project that they
-are managing, the instructor will evaluate the project managers according to how well they handled the merging of pull
-requests. Every student, including the project managers, should make a final assessment of each software project, using
-their GitHub repository to answer the following questions:
-
-\begin{enumerate}
-  \item How would you rate the overall usefulness and quality of the software tool?
-  \item When you started this assignment, what were the areas in greatest need of improvement?
-  \item Now that you have finished this laboratory assignment, what is the next step for each project?
-  \item Now that you have completed these tools, what have you learned about project management?
-  \item If you could ``redo'' one aspect of completing these projects, what would it be? Why?
-\end{enumerate}
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
