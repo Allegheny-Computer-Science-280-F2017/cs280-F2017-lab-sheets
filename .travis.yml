@@ -10,6 +10,7 @@ script:
 - latexmk -pdf -outdir=_build lab04/cs280F2017_lab04.tex
 - latexmk -pdf -outdir=_build lab05/cs280F2017_lab05.tex
 - latexmk -pdf -outdir=_build lab06/cs280F2017_lab06.tex
+- latexmk -pdf -outdir=_build lab07/cs280F2017_lab07.tex
 - latexmk -pdf -outdir=_build exam1/cs280F2017_studyguide_exam01.tex
 deploy:
   provider: releases
@@ -22,6 +23,7 @@ deploy:
     - _build/cs280F2017_lab04.pdf
     - _build/cs280F2017_lab05.pdf
     - _build/cs280F2017_lab06.pdf
+    - _build/cs280F2017_lab07.pdf
     - _build/cs280F2017_studyguide_exam01.pdf
   skip_cleanup: true
   on:
