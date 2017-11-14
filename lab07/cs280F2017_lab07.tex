@@ -188,6 +188,23 @@ repositories in an organization, you are encouraged to explore the use of
 \url{https://github.com/danwallach/github-clone-all}, which has been tested by the course instructor and determined to
 be suitable for this first task.
 
+GatorGauge should accept an input parameter that specifies the directory containing the subdirectories that are the
+GitHub repositories for every student and laboratory assignment. Then, GatorGauge will traverse all of these
+directories, using functions that enable it to, for instance, find all of the Java source code files or the natural
+language reflections stored in Markdown files. Next, GatorGauge should provide the following features, to be confirmed
+with your customer.
+
+\begin{itemize}
+
+  \item {\bf Source Code Comments}: The tool should extract, count, and analyze the source code comments in the Java
+    programming langauge files. This feature will require that GatorGauge can differentiate between single-line and
+    multiple-line comments and that it can, additionally, extract the natural language text of each comment. In addition
+    to counting the comments and reporting relevant summary statistics concerning these counts across all students and
+    all GitHub repositories, GatorGauge should apply natural language processing techniques extract both keywords and
+    the commonly expressed topics in the source code comments.
+
+\end{itemize}
+
 \section*{Accessing the Laboratory Assignment on GitHub}
 
 To access the laboratory assignment, you should go into the \channel{\#announcements} channel in our Slack team and find
