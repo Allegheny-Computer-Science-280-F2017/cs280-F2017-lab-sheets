@@ -1,0 +1,345 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{December 4}
+\newcommand{\assignmentassignedate}{November 20}
+\newcommand{\assignmentnumber}{Two}
+
+\newcommand{\labyear}{2017}
+\newcommand{\assignedday}{Monday}
+\newcommand{\dueday}{Monday}
+\newcommand{\labtime}{1:30 pm}
+
+\newcommand{\assigneddate}{Announced: \assignedday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Exam: \dueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{DisplayOutput}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/labone/DisplayOutput.java}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labone/DisplayOutput.java -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 111}
+\lhead{Exam \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\guidetitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 280\\Software Engineering\\
+      Fall 2017\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\guidetitle{Exam \assignmentnumber{} Study Guide \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Introduction}
+
+\noindent
+The exam will be ``closed notes'' and ``closed book'' and it will cover the
+following materials. Please review the ``Course Schedule'' on the Web site for
+the course to see the content and slides that we have covered to this date.
+Students may post questions about this material to our Slack team.
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Chapters One through Three in SETP (i.e., introduction to the software
+    engineering lifecycle)
+
+  \item Chapters One through Three in MMM (i.e., challenges and solutions in
+    software engineering)
+
+  \item Chapters Four through Six in SETP (i.e., requirements, architecture, and design)
+
+  \item Chapter Four in MMM (i.e., trade-offs in strategies for system design)
+
+  \item Chapter Seven in SETP (i.e., methods for software implementation)
+
+  \item Chapters Twelve and Thirteen in MMM (i.e., tools for implementation and
+    debugging)
+
+  \item Your class notes, class activities, lecture slides, and the first four
+    laboratory assignments
+
+  \item Knowledge of the basic commands necessary for using {\tt git} and
+    GitHub; understanding of the ``Git flow'' model for collaboration; basic
+    understanding of the Markdown syntax
+
+  \item Key concepts introduced and reviewed during the laboratory sessions
+    (e.g., the components of a ``programming systems product'' and how to use
+    testing and linting tools in Python)
+
+  \item Lessons learned from the team-based implementation and delivery of
+    real-world software
+
+\end{itemize}
+
+\noindent The examination will include a mix of questions that will require you
+to draw and/or comment on a diagram, write a short answer, explain and/or write
+a source code segment, or give and comment on a list of concepts or points. The
+emphasis will be on the following list of illustrative subjects. Please note
+that this list is not exhaustive --- rather it is designed to suggest
+representative topics.
+
+When studying for the test, don't forget that the Web site for our course
+contains mobile-ready slides that will provide you with an overview of the key
+concepts that we discussed in the first modules. You can use the color scheme in
+the slides to notice points where we, for instance, completed an in-class
+activity, discussed a key point, or made reference to additional details
+available in the one of the textbooks. The course instructor encourages students
+to form and participate in study groups when studying the content that this
+review sheet outlines. If students have questions about the material on this
+review sheet, they should schedule a meeting with the instructor.
+
+\vspace*{-.05in}
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The state-of-the-art and the key challenges within the field of software
+    engineering, with a focus on the steps of problem solving and the meaning of
+    terms like ``defect'' and ``quality''.
+
+  \item The phases of the software development lifecycle and the ways in which
+    different software process models (e.g., the spiral model or the V model)
+    connect and interpret these phases.
+
+  \item The key strengths and weaknesses of the different software development
+    process models (e.g., one drawback of the waterfall model is its focus on
+    documents and its lack of explicit iteration).
+
+  \item Key terms such as ``verification'' and ``validation'' and
+    ``incremental'' and ``iterative''.
+
+  \item How to use activity graphs or task lists to track progress and plan a
+    software development project. Additionally, an understanding of the ways in
+    which managers will estimate the deadlines for completing a software system
+    (e.g., using data mining algorithms to predict project characteristics such
+    as anticipated costs and the likelihood of an on-time completion).
+
+  \item The roles that members of a software team may play and the ways in which
+    individual personalities and characteristics may equip certain people to
+    work on specific tasks.
+
+  \item How different types of software engineering tasks exhibit different
+    relationships between the time-to-completion and the number of workers
+    assigned to finish the task.
+
+  \item Lessons learned from working in a team to specify, design, implement,
+    test, document, and release a programming systems product during our
+    laboratory sessions. For instance, an understanding of the technical means
+    by which a program's code and documentation is released to GitHub. In
+    addition, a grasp of how to use GitHub's issue tracking system to report,
+    triage, and resolve defects and/or concerns about a programming systems
+    product.
+
+  \item The reasons why it is important to accurately capture the requirements
+    for a software system.
+
+  \item The different ways in which you can classify and understand software
+    requirements.
+
+  \item Characteristics of requirements and the ways in which they can be
+    validated and verified.
+
+  \item The relationship between the architecture and design of a software
+    system.
+
+  \item The characteristics of a software architecture and how they may
+    influence the performance (e.g., response time, throughput, and load)
+    demonstrated by the completed system.
+
+  \item Canonical software architectures (e.g., ``pipe and filter'') and their
+    strengths and weaknesses.
+
+  \item The overall meaning and purpose of object-oriented design and
+    implementation measures.
+
+  \item The principles for improving and evaluating a system's design. For
+    instance, in the context of coupling, an understanding of tight and loose
+    coupling, the kinds of architectures that promote different types of
+    coupling, and an intuitive understanding of coupling scores.
+
+  \item The ways in which pre-conditions, post-conditions, and invariants can
+    document an interface.
+
+  \item A basic understanding of object-oriented design and the effective use of
+    design patterns.
+
+  \item The different types of Unified Modelling Language (UML) diagrams, the
+    purpose, strengths, and weaknesses of each canonical type of diagram, and,
+    overall, the purpose of using diagrams in software design. For instance, an
+    understanding of the UML package and class diagrams.
+
+  \item An understanding of the phrase ``conceptual integrity'' and,
+    additionally, the ability to analyze different strategies for achieving
+    conceptual integrity in all phases of the software lifecycle.
+
+  \item The tension between ``aristocracy'' and ``democracy'' in the design of
+    software systems.
+
+  \item General guidelines for improving the implementation of a software
+    system. For instance, the ways in which a software development team can
+    achieve objectives such as ``localizing input and output'', ``including
+    psuedo-code'', and ``revising and rewriting, not patching''.
+
+  \item Standards and guidelines that govern the way in which a program's source
+    code should be implemented and formatted. A high-level understanding of a
+    source code standard for the Python and Java programming language and a
+    clear sense of the benefits and drawbacks associated with using this
+    standard. Additionally, the ability to look at a source code segment,
+    written in Python or Java, and comment on how it adheres to or violates a
+    coding standard.
+
+  \item Standards and guidelines for creating internal and external
+    documentation for a software system. Given, for instance, a source code
+    comment, you should be able to explain its strengths and weaknesses. You
+    should also understand how external documentation should describe the
+    problem, algorithms, and data that are part of a system's implementation.
+
+  \item An understanding of how programming is a form of problem solving.
+    Specifically, you should understand the activities associated with
+    understanding a problem, devising a plan, carrying out the plan, and
+    reflecting on the chosen implementation of the completed software system.
+
+  \item The ways in which agile methodologies, such as extreme programming and
+    pair programming, influence the efficiency of software implementation and
+    the quality of the resulting product.
+
+\end{itemize}
+
+\section*{Reminder Concerning the Honor Code}
+
+\noindent Students are required to fully adhere to the Honor Code during the
+completion of this exam. More details about the Allegheny College Honor Code are
+provided on the syllabus. Students are strongly encouraged to carefully review
+the full statement of the Honor Code before taking this exam. If you do not
+understand Allegheny College's Honor Code, please schedule a meeting with the
+course instructor. The following is a review of Honor Code statement from the
+course syllabus:
+
+\begin{quote}
+
+  The Academic Honor Program that governs the entire academic program at
+  Allegheny College is described in the Allegheny Academic Bulletin. The Honor
+  Program applies to all work that is submitted for academic credit or to meet
+  non-credit requirements for graduation at Allegheny College. This includes all
+  work assigned for this class (e.g., examinations, laboratory assignments, and
+  the final project). All students who have enrolled in the College will work
+  under the Honor Program. Each student who has matriculated at the College has
+  acknowledged the following pledge:
+
+\end{quote}
+
+\begin{quote}
+
+  I hereby recognize and pledge to fulfill my responsibilities, as defined in
+  the Honor Code, and to maintain the integrity of both myself and the College
+  community as a whole.
+
+\end{quote}
+
+\section*{Strategies for Studying}
+
+As you study for this examination, you are encouraged to form study groups with
+individuals who were previously a member of one of your software development
+teams during a laboratory session. You can collaborate with these individuals to
+ensure that you understand all of the key concepts mentioned on this study
+guide. Additionally, students are encouraged to create a Slack channel that can
+host questions and answers that arise as you are studying for the test. Even
+though the course instructor will try to, whenever possible, answer review
+questions that students post in this channel, you are strongly encouraged to
+answer the questions posted by your colleagues as this will also help you to
+ensure that you fully understand the material.
+
+When studying for the test, don't forget that the Web site for our course
+contains mobile-ready slides that will provide you with an overview of the key
+concepts that we discussed in the first module. You can use the color scheme in
+the slides to notice points where we, for instance, completed an in-class
+activity, discussed a key point, or made reference to additional details
+available in the SETP and MMM textbooks. Finally, students are strongly
+encouraged to schedule a meeting during the course instructor's office hours so
+that we can resolve any of your questions about the material and ensure that you
+have the knowledge and skills necessary for doing well on this examination.
+
+Remember, while the test is taken individually during the stated class period,
+your review for it can be done collaboratively! Again, you can schedule a
+meeting with the course instructor during office hours if you have questions
+about the topics or policies outlined on this review sheet.
+
+\end{document}
