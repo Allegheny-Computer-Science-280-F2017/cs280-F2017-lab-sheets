@@ -13,7 +13,7 @@ script:
 - latexmk -pdf -outdir=_build lab07/cs280F2017_lab07.tex
 - latexmk -pdf -outdir=_build exam1/cs280F2017_studyguide_exam01.tex
 - latexmk -pdf -outdir=_build exam2/cs280F2017_studyguide_exam02.tex
-- latexmk -pdf -outdir=_build exam2/cs280F2017_studyguide_exam03.tex
+- latexmk -pdf -outdir=_build exam3/cs280F2017_studyguide_exam03.tex
 deploy:
   provider: releases
   api_key:
